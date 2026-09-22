@@ -221,6 +221,24 @@ The following instructions are targetted toward recent Raspberry Pi OS versions 
             ````
             sudo tcpdump -i wlan1 -w 80211p_capture.pcap
             ````
+            To confirm wlan1 channel and frequency
+            ````
+            iw dev wlan1 info
+            ````
+            You should see something like:
+            ````
+            Interface wlan1
+                    ifindex 4
+                    wdev 0x100000001
+                    addr e0:ca:94:a8:a1:a4
+                    type monitor
+                    wiphy 1
+                    channel 180 (5900 MHz), width: 10 MHz, center1: 5900 MHz
+                    txpower 23.00 dBm
+                    multicast TXQ:
+                            qsz-byt qsz-pkt flows   drops   marks   overlmt hashcol tx-bytes        tx-packets
+                            0       0       26      0       0       0       0       4081            26
+            ````
 ### Example kernel logs
 #### ath9k
 ````
