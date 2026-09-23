@@ -219,6 +219,14 @@ The following instructions are targetted toward recent Raspberry Pi OS versions 
             sudo iw wlan1 ocb join 5890 10MHz
             sudo tcpdump -i wlan1 -w capture.pcap
             ````
+            The following channel capture more data
+            ````
+            sudo ip link set wlan1 down
+            sudo iw wlan1 set type ocb
+            sudo ip l set dev wlan1 up
+            sudo iw wlan1 ocb join 5880 10MHz
+            sudo tcpdump -i wlan1 -w capture.pcap
+            ````
         2. ath9k - monitor mode
             ````
             sudo ip link set wlan1 down
