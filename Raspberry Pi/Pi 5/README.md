@@ -206,9 +206,18 @@ The following instructions are targetted toward recent Raspberry Pi OS versions 
     6. Activate the interface:
         1. ath9k - OCB (communication mode)
             ````
+            sudo ip link set wlan1 down
             sudo iw wlan1 set type ocb
             sudo ip l set dev wlan1 up
             sudo iw wlan1 ocb join 5900 10MHz
+            sudo tcpdump -i wlan1 -w capture.pcap
+            ````
+            ````
+            sudo ip link set wlan1 down
+            sudo iw wlan1 set type ocb
+            sudo ip l set dev wlan1 up
+            sudo iw wlan1 ocb join 5890 10MHz
+            sudo tcpdump -i wlan1 -w capture.pcap
             ````
         2. ath9k - monitor mode
             ````
