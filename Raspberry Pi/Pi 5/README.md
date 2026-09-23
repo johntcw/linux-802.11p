@@ -227,17 +227,6 @@ The following instructions are targetted toward recent Raspberry Pi OS versions 
             sudo iw wlan1 ocb join 5880 10MHz
             sudo tcpdump -i wlan1 -w capture.pcap
             ````
-        2. ath9k - monitor mode
-            ````
-            sudo ip link set wlan1 down
-            sudo iw dev wlan1 set type monitor
-            sudo ip link set wlan1 up
-            sudo iw dev wlan1 set channel 180 10MHz
-            ````
-            TCPDUMP capture
-            ````
-            sudo tcpdump -i wlan1 -w 80211p_capture.pcap
-            ````
             To confirm wlan1 channel and frequency
             ````
             iw dev wlan1 info
